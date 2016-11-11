@@ -13,6 +13,7 @@
     "angular": "1.5.8",
     "angular-animate": "1.5.8",
     "angular-touch": "1.5.8",
+    "angular-ui-router": "0.3.2",
     "bootstrap-sass": "3.3.7",
     "angular-bootstrap": "2.2.0",
     "components-font-awesome": "~4.7.0"

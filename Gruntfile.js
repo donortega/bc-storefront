@@ -97,6 +97,7 @@ module.exports = function(grunt) {
                           '<%= appConfig.bowerSource %>/angular-animate/angular-animate.js',
                           '<%= appConfig.bowerSource %>/angular-touch/angular-touch.js',
                           '<%= appConfig.bowerSource %>/angular-bootstrap/ui-bootstrap-tpls.js',
+                          '<%= appConfig.bowerSource %>/angular-ui-router/release/angular-ui-router.js',
                       ]
                   }
               ]
