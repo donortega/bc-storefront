@@ -12605,14 +12605,25 @@ button.close {
   }
 }
 /* line 10, ../../../../sass/donortega.scss */
+h2 {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid white;
+  font-family: 'Georgia', serif;
+}
+
+/* line 19, ../../../../sass/donortega.scss */
 .nav-row {
-  margin-left: 0;
-  margin-right: 0;
   padding-top: 15px;
   padding-bottom: 15px;
 }
 
-/* line 17, ../../../../sass/donortega.scss */
+/* line 24, ../../../../sass/donortega.scss */
 .nav-cell {
   float: none;
   display: inline-block;
@@ -12624,15 +12635,31 @@ button.close {
   font-weight: bold;
 }
 
-/* line 25, ../../../../sass/donortega.scss */
+/* line 32, ../../../../sass/donortega.scss */
 .nav-item {
   margin: 0 15px;
 }
 
-/* line 30, ../../../../sass/donortega.scss */
+/* line 37, ../../../../sass/donortega.scss */
 .nav-link, .nav-link:hover, .nav-link:active, .nav-link:focus {
   color: black;
   letter-spacing: 0.15em;
   text-decoration: none;
   text-transform: uppercase;
+}
+
+/* line 49, ../../../../sass/donortega.scss */
+.category-header {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  background: url("/assets/i/plates-header.jpg") center center no-repeat;
+}
+
+/* line 55, ../../../../sass/donortega.scss */
+.category-header-title {
+  padding: 115px 15px;
+  border-left: 15px solid white;
+  border-right: 15px solid white;
+  background-color: #393935;
+  color: white;
 }

@@ -24,7 +24,7 @@ module.exports = function(grunt) {
                 'bower_components/components-font-awesome/scss',
             ],
             compassImagesPath: 'app/assets/i',
-            compassImagesDir: 'i',
+            compassImagesDir: 'assets/i',
             compassFontsPath: 'app/assets/fonts'
         }
     ;
