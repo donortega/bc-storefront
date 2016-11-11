@@ -6,3 +6,15 @@ $fa-font-path: '../fonts/font-awesome';
 @import 'font-awesome';
 
 @import 'bootstrap';
+
+.nav-row {
+    margin-left: 0;
+    margin-right: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.nav-cell {
+    float: none;
+    @include inline-block;
+}

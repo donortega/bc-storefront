@@ -12604,3 +12604,20 @@ button.close {
     display: none !important;
   }
 }
+/* line 10, ../../../../sass/donortega.scss */
+.nav-row {
+  margin-left: 0;
+  margin-right: 0;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+/* line 17, ../../../../sass/donortega.scss */
+.nav-cell {
+  float: none;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+}
