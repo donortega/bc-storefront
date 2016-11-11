@@ -1,0 +1,15 @@
+.sass-cache
+app/.sass-cache
+.DS_Store
+node_modules/
+.bundle/
+bin/
+ruby-bundles/
+robots.txt
+app/.htaccess
+.htpasswd
+.ftpquota
+
+# compiled CSS+JS
+# app/assets/css
+# app/assets/js

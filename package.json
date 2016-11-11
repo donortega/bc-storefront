@@ -1,0 +1,24 @@
+{
+  "name": "DonOrtegaBigCommerce",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "bower": "^1.7.9",
+    "grunt": "^1.0.0",
+    "grunt-concurrent": "^2.3.1",
+    "grunt-contrib-compass": "^1.1.1",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-express": "^1.4.1",
+    "grunt-parallel": "^0.5.1",
+    "matchdep": "^1.0.1"
+  },
+  "dependencies": {}
+}
