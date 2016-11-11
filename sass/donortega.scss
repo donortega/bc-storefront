@@ -67,9 +67,16 @@ h2 {
     margin-top: 30px;
 }
 
+.product-list-container {
+    margin-bottom: 50px;
+}
+
 .product-list-image {
     width: 100%;
+    height: 333px;
     margin-bottom: 25px;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
 .product-list-info {
