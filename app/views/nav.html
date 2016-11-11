@@ -1,0 +1,34 @@
+<div class="nav-row row">
+    <div class="nav-cell col-xs-4"><img src="/assets/i/logo.png" alt="Hero" title="Hero" />
+    </div><div class="nav-cell col-xs-4 text-center">
+        <ul class="list-inline">
+            <li class="nav-item"><a class="nav-link" href ng-click>Home</a></li>
+            <li class="nav-item" uib-dropdown>
+                <a class="nav-link" href uib-dropdown-toggle>Shop <span class="caret"></span></a>
+                <ul class="dropdown-menu" uib-dropdown-menu>
+                    <li><a href ng-click>Men</a></li>
+                    <li><a href ng-click>Women</a></li>
+                    <li><a href ng-click>Kids</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href ng-click>Journal</a></li>
+            <li class="nav-item" uib-dropdown>
+                <a class="nav-link" href uib-dropdown-toggle>More <span class="caret"></span></a>
+                <ul class="dropdown-menu" uib-dropdown-menu>
+                    <li><a href ng-click>About Us</a></li>
+                    <li><a href ng-click>Site Map</a></li>
+                    <li><a href ng-click>Customer Service</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div><div class="nav-cell col-xs-4 text-right">
+        <ul class="list-inline">
+            <li uib-dropdown>
+                <a class="nav-link" href uib-dropdown-toggle>My Cart (<span ng-bind="ctrl.cartCount"></span>) <span class="caret"></span></a>
+                <ul class="dropdown-menu dropdown-menu-right" uib-dropdown-menu>
+                    <li><a href ng-click>Cart here</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
