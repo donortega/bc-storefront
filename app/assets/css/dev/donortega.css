@@ -12620,4 +12620,7 @@ button.close {
   *vertical-align: auto;
   *zoom: 1;
   *display: inline;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
 }

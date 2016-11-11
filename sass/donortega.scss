@@ -17,4 +17,8 @@ $fa-font-path: '../fonts/font-awesome';
 .nav-cell {
     float: none;
     @include inline-block;
+
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
 }
