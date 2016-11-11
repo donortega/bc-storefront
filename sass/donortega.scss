@@ -22,3 +22,17 @@ $fa-font-path: '../fonts/font-awesome';
     font-weight: bold;
     text-transform: uppercase;
 }
+
+.nav-item {
+    margin: 0 15px;
+}
+
+.nav-link {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+        color: black;
+        text-decoration: none;
+    }
+}
