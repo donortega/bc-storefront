@@ -187,6 +187,21 @@ module.exports = function(grunt) {
                     outputStyle: 'expanded',
                     noLineComments: false
                 }
+            },
+            build: {
+                options: {
+                    bundleExec: true,
+                    watch: true,
+                    sassDir: '<%= appConfig.compassSource %>',
+                    cssDir: '<%= appConfig.compassBuildPath %>',
+                    importPath: '<%= appConfig.compassImportPath %>',
+                    imagesPath: '<%= appConfig.compassImagesPath %>',
+                    imagesDir: '<%= appConfig.compassImagesDir %>',
+                    fontsPath: '<%= appConfig.compassFontsPath %>',
+                    fontsDir: '<%= appConfig.compassFontsDir %>',
+                    outputStyle: 'compressed',
+                    noLineComments: true
+                }
             }
         },
 
