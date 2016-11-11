@@ -20,7 +20,6 @@ $fa-font-path: '../fonts/font-awesome';
 
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
-    text-transform: uppercase;
 }
 
 .nav-item {
@@ -33,6 +32,8 @@ $fa-font-path: '../fonts/font-awesome';
     &:active,
     &:focus {
         color: black;
+        letter-spacing: 0.15em;
         text-decoration: none;
+        text-transform: uppercase;
     }
 }

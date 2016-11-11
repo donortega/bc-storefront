@@ -12622,16 +12622,17 @@ button.close {
   *display: inline;
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
-  text-transform: uppercase;
 }
 
-/* line 26, ../../../../sass/donortega.scss */
+/* line 25, ../../../../sass/donortega.scss */
 .nav-item {
   margin: 0 15px;
 }
 
-/* line 31, ../../../../sass/donortega.scss */
+/* line 30, ../../../../sass/donortega.scss */
 .nav-link, .nav-link:hover, .nav-link:active, .nav-link:focus {
   color: black;
+  letter-spacing: 0.15em;
   text-decoration: none;
+  text-transform: uppercase;
 }
