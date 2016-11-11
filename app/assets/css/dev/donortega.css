@@ -12643,23 +12643,55 @@ h2 {
 /* line 37, ../../../../sass/donortega.scss */
 .nav-link, .nav-link:hover, .nav-link:active, .nav-link:focus {
   color: black;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.10em;
   text-decoration: none;
   text-transform: uppercase;
 }
 
 /* line 49, ../../../../sass/donortega.scss */
 .category-header {
+  margin-bottom: 30px;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
   background: url("/assets/i/plates-header.jpg") center center no-repeat;
 }
 
-/* line 55, ../../../../sass/donortega.scss */
+/* line 56, ../../../../sass/donortega.scss */
 .category-header-title {
   padding: 115px 15px;
   border-left: 15px solid white;
   border-right: 15px solid white;
   background-color: #393935;
   color: white;
+}
+
+/* line 66, ../../../../sass/donortega.scss */
+.product-list {
+  margin-top: 30px;
+}
+
+/* line 70, ../../../../sass/donortega.scss */
+.product-list-image {
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+/* line 75, ../../../../sass/donortega.scss */
+.product-list-info {
+  font-family: 'Roboto', sans-serif;
+}
+/* line 78, ../../../../sass/donortega.scss */
+.product-list-info.product-list-info-brand {
+  color: #999;
+}
+/* line 81, ../../../../sass/donortega.scss */
+.product-list-info.product-list-info-title {
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+}
+
+/* line 87, ../../../../sass/donortega.scss */
+.product-list-price {
+  font-family: 'Georgia', serif;
+  color: #aaa;
 }

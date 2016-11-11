@@ -6,3 +6,16 @@
         </div>
     </div>
 </div>
+
+<div class="container">
+    <div class="row">
+        <ul class="product-list">
+            <li class="text-center col-xs-4" ng-repeat="item in ctrl.productList">
+                <img ng-src="/assets/i/{{ item.image }}" alt="{{ item.title }}" title="{{ item.title }}" class="product-list-image">
+                <p class="product-list-info product-list-info-brand">{{ item.brand }}</p>
+                <p class="product-list-info product-list-info-title">{{ item.title }}</p>
+                <p class="product-list-price">{{ item.price | currency : "$" : 2 }}</p>
+            </li>
+        </ul>
+    </div>
+</div>
