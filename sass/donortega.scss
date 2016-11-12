@@ -102,6 +102,10 @@ h2 {
     text-transform: none;
 }
 
+.nav-cart-footer {
+    margin-bottom: 20px;
+}
+
 .nav-cart-total {
     margin-left: 15px;
     margin-right: 15px;
@@ -115,6 +119,45 @@ h2 {
     font-size: 12px;
     letter-spacing: 0.10em;
     text-transform: uppercase;
+}
+
+.nav-cart-button {
+    display: block;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 3px solid black;
+
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        font-size: 12px;
+        letter-spacing: 0.10em;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    &.nav-cart-button-cart {
+        &,
+        &:hover,
+        &:active,
+        &:focus {
+            color: black;
+        }
+    }
+
+    &.nav-cart-button-checkout {
+        background-color: black;
+
+        &,
+        &:hover,
+        &:active,
+        &:focus {
+            color: white;
+        }
+    }
 }
 
 
