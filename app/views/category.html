@@ -12,7 +12,20 @@
         <ul class="product-list">
             <li class="product-list-container text-center col-xs-4" ng-repeat="item in ctrl.productList">
                 <div class="product-list-image" style="background-image: url('/assets/i/{{ item.image }}')">
-                    <!--  -->
+                    <div class="product-list-overlay-container">
+                        <div class="product-list-overlay">
+                            <div class="row">
+                                <div class="col-xs-6 col-xs-offset-3">
+                                    <a class="product-list-overlay-btn product-list-overlay-btn-details" ui-sref="product({ productId: {{ $index }} })">View Details</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6 col-xs-offset-3">
+                                    <a class="product-list-overlay-btn product-list-overlay-btn-cart" href ng-click="ctrl.changeCart('add', item, ctrl.qtyToAdd, true);">Add to Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <p class="product-list-info product-list-info-brand">{{ item.brand }}</p>
                 <p class="product-list-info product-list-info-title">

@@ -12788,74 +12788,121 @@ a, a:hover, a:active, a:focus {
 }
 
 /* line 186, ../../../../sass/donortega.scss */
+.product-list-overlay-container {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+/* line 193, ../../../../sass/donortega.scss */
+.product-list-image:hover .product-list-overlay-container {
+  display: flex;
+}
+
+/* line 197, ../../../../sass/donortega.scss */
+.product-list-overlay {
+  display: none;
+  width: 100%;
+  margin: auto;
+}
+/* line 202, ../../../../sass/donortega.scss */
+.product-list-image:hover .product-list-overlay {
+  display: block;
+}
+
+/* line 207, ../../../../sass/donortega.scss */
+.product-list-overlay-btn {
+  display: block;
+  margin: 10px 0;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+}
+/* line 218, ../../../../sass/donortega.scss */
+.product-list-overlay-btn, .product-list-overlay-btn:hover, .product-list-overlay-btn:active, .product-list-overlay-btn:focus {
+  color: white;
+}
+/* line 225, ../../../../sass/donortega.scss */
+.product-list-overlay-btn.product-list-overlay-btn-details {
+  background: black;
+}
+/* line 229, ../../../../sass/donortega.scss */
+.product-list-overlay-btn.product-list-overlay-btn-cart {
+  background: #4a4a4d;
+}
+
+/* line 234, ../../../../sass/donortega.scss */
 .product-list-info {
   font-family: 'Roboto', sans-serif;
 }
-/* line 189, ../../../../sass/donortega.scss */
+/* line 237, ../../../../sass/donortega.scss */
 .product-list-info.product-list-info-brand {
   color: #999;
 }
-/* line 192, ../../../../sass/donortega.scss */
+/* line 240, ../../../../sass/donortega.scss */
 .product-list-info.product-list-info-title {
   letter-spacing: 0.10em;
   text-transform: uppercase;
 }
 
-/* line 198, ../../../../sass/donortega.scss */
+/* line 246, ../../../../sass/donortega.scss */
 .product-list-price {
   font-family: 'Georgia', serif;
   color: #aaa;
 }
 
-/* line 204, ../../../../sass/donortega.scss */
+/* line 252, ../../../../sass/donortega.scss */
 .product-detail-breadcrumb {
   padding-top: 35px;
   border-top: 1px solid #ddd;
 }
 
-/* line 210, ../../../../sass/donortega.scss */
+/* line 258, ../../../../sass/donortega.scss */
 .product-detail-breadcrumb-link, .product-detail-breadcrumb-link:hover, .product-detail-breadcrumb-link:active, .product-detail-breadcrumb-link:focus {
   font-weight: bold;
   letter-spacing: 0.10em;
   text-transform: uppercase;
 }
-/* line 220, ../../../../sass/donortega.scss */
+/* line 268, ../../../../sass/donortega.scss */
 .product-detail-breadcrumb-link.product-detail-breadcrumb-link-current, .product-detail-breadcrumb-link.product-detail-breadcrumb-link-current:hover, .product-detail-breadcrumb-link.product-detail-breadcrumb-link-current:active, .product-detail-breadcrumb-link.product-detail-breadcrumb-link-current:focus {
   color: #aaa;
 }
 
-/* line 229, ../../../../sass/donortega.scss */
+/* line 277, ../../../../sass/donortega.scss */
 .product-detail-container {
   margin-top: 60px;
   margin-bottom: 60px;
 }
 
-/* line 234, ../../../../sass/donortega.scss */
+/* line 282, ../../../../sass/donortega.scss */
 .product-detail-image {
   width: 100%;
 }
 
-/* line 238, ../../../../sass/donortega.scss */
+/* line 286, ../../../../sass/donortega.scss */
 .product-detail-info-brand,
 .product-detail-info-description {
   font-family: 'Roboto', sans-serif;
   color: #999;
 }
 
-/* line 244, ../../../../sass/donortega.scss */
+/* line 292, ../../../../sass/donortega.scss */
 .product-detail-info-title {
   font-family: 'Georgia', serif;
   font-size: 32px;
 }
 
-/* line 249, ../../../../sass/donortega.scss */
+/* line 297, ../../../../sass/donortega.scss */
 .product-detail-info-price {
   font-family: 'Georgia', serif;
   color: #aaa;
   font-size: 26px;
 }
 
-/* line 256, ../../../../sass/donortega.scss */
+/* line 304, ../../../../sass/donortega.scss */
 .product-action {
   float: none;
   display: inline-block;
@@ -12866,7 +12913,7 @@ a, a:hover, a:active, a:focus {
   padding: 0;
 }
 
-/* line 262, ../../../../sass/donortega.scss */
+/* line 310, ../../../../sass/donortega.scss */
 .product-action-qty {
   display: inline-block;
   vertical-align: middle;
@@ -12877,7 +12924,7 @@ a, a:hover, a:active, a:focus {
   background: #eee;
 }
 
-/* line 268, ../../../../sass/donortega.scss */
+/* line 316, ../../../../sass/donortega.scss */
 .product-action-increment-container {
   display: inline-block;
   vertical-align: middle;
@@ -12886,7 +12933,7 @@ a, a:hover, a:active, a:focus {
   *display: inline;
 }
 
-/* line 272, ../../../../sass/donortega.scss */
+/* line 320, ../../../../sass/donortega.scss */
 .product-action-increment {
   display: block;
   margin-top: 2px;
@@ -12896,12 +12943,12 @@ a, a:hover, a:active, a:focus {
   font-weight: bold;
   font-size: 14px;
 }
-/* line 282, ../../../../sass/donortega.scss */
+/* line 330, ../../../../sass/donortega.scss */
 .product-action-increment:first-child {
   margin-top: 0;
 }
 
-/* line 287, ../../../../sass/donortega.scss */
+/* line 335, ../../../../sass/donortega.scss */
 .product-action-btn {
   display: inline-block;
   vertical-align: middle;
@@ -12914,7 +12961,7 @@ a, a:hover, a:active, a:focus {
   font-weight: bold;
   text-transform: uppercase;
 }
-/* line 296, ../../../../sass/donortega.scss */
+/* line 344, ../../../../sass/donortega.scss */
 .product-action-btn, .product-action-btn:hover, .product-action-btn:active, .product-action-btn:focus {
   color: white;
 }
