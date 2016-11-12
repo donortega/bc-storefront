@@ -78,19 +78,23 @@ app.controller('StoreCtrl', ['$scope', 'products', function($scope, products) {
         }
     };
 
-    self.addCart = function(product, qtyToAdd) {
+    self.changeCart = function(action, product, qtyToAdd) {
         // { product, qtyToAdd }
         var index = self.cart.findIndex(function(element) {
             return angular.equals(element.product, product);
         });
 
-        if (index === -1) {
-            self.cart.push({
-                product: product,
-                qty: qtyToAdd
-            });
-        } else {
-            self.cart[index].qty = self.cart[index].qty + qtyToAdd;
+        if (action === 'add') {
+            if (index === -1) {
+                self.cart.push({
+                    product: product,
+                    qty: qtyToAdd
+                });
+            } else {
+                self.cart[index].qty = self.cart[index].qty + qtyToAdd;
+            }
+        } else if (action === 'remove') {
+            self.cart.splice(index, 1);
         }
 
         sessionStorage.setItem('bigcommerce-cart', JSON.stringify(self.cart));
