@@ -56,10 +56,14 @@ app.controller('StoreCtrl', ['$scope', '$timeout', 'products', function($scope, 
     self.cartCount = 0;
     self.qtyToAdd = 1;
 
-    if (!sessionStorage.getItem('bigcommerce-cart')) {
+    if (!localStorage.getItem('bigcommerce-cart')) {
         self.cart = [];
+    } else if ((localStorage.getItem('bigcommerce-cart').timestamp + (3.6e6)) < (new Date().getTime())) {
+        self.cart = [];
+
+        localStorage.removeItem('bigcommerce-cart');
     } else {
-        self.cart = JSON.parse(sessionStorage.getItem('bigcommerce-cart'));
+        self.cart = JSON.parse(localStorage.getItem('bigcommerce-cart')).cart;
     }
 
     products.getList().then(function(data) {
@@ -104,7 +108,10 @@ app.controller('StoreCtrl', ['$scope', '$timeout', 'products', function($scope, 
             $event.stopPropagation();
         }
 
-        sessionStorage.setItem('bigcommerce-cart', JSON.stringify(self.cart));
+        localStorage.setItem('bigcommerce-cart', JSON.stringify({
+            cart: self.cart,
+            timestamp: new Date().getTime()
+        }));
     };
 
     self.calculateTotal = function() {
