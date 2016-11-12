@@ -20,15 +20,34 @@ app.config(['$stateProvider', function ($stateProvider) {
 
     var productState = {
         name: 'product',
-        url: '/product',
+        url: '/product/{productId}',
         views: {
             nav: {
                 templateUrl: 'views/nav.html'
             },
             content: {
                 templateUrl: 'views/product.html'
+                ,
+                resolve: {
+                    product: function(products, $stateParams) {
+                        console.log('qqq $stateParams:', $stateParams, products);
+                        products.getList().then(function(data) {
+                            console.log('qqq product detail:', data[$stateParams.productId]);
+                            return data[$stateParams.productId];
+                        });
+                    }
+                }
+                // ,
+                // controller: function($scope, product) {
+                //     $scope.product = product;
+                //     console.log('qqq product:', product);
+                // },
+                // controllerAs: '$ctrl'
             }
         }
+        // ,
+        // component: 'product'
+
     };
 
     var cartState = {

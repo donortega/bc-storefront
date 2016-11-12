@@ -95,3 +95,44 @@ h2 {
     font-family: 'Georgia', serif;
     color: #aaa;
 }
+
+
+.product-detail-breadcrumb {
+    padding-top: 35px;
+    border-top: 1px solid #ddd;
+}
+
+.product-detail-breadcrumb-link {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+        font-family: 'Roboto', sans-serif;
+        color: black;
+    }
+}
+
+.product-detail-container {
+    margin-top: 60px;
+}
+
+.product-detail-image {
+    width: 100%;
+}
+
+.product-detail-info-brand,
+.product-detail-info-description {
+    font-family: 'Roboto', sans-serif;
+    color: #999;
+}
+
+.product-detail-info-title {
+    font-family: 'Georgia', serif;
+    font-size: 32px;
+}
+
+.product-detail-info-price {
+    font-family: 'Georgia', serif;
+    color: #aaa;
+    font-size: 26px;
+}

@@ -12703,3 +12703,45 @@ h2 {
   font-family: 'Georgia', serif;
   color: #aaa;
 }
+
+/* line 100, ../../../../sass/donortega.scss */
+.product-detail-breadcrumb {
+  padding-top: 35px;
+  border-top: 1px solid #ddd;
+}
+
+/* line 106, ../../../../sass/donortega.scss */
+.product-detail-breadcrumb-link, .product-detail-breadcrumb-link:hover, .product-detail-breadcrumb-link:active, .product-detail-breadcrumb-link:focus {
+  font-family: 'Roboto', sans-serif;
+  color: black;
+}
+
+/* line 115, ../../../../sass/donortega.scss */
+.product-detail-container {
+  margin-top: 60px;
+}
+
+/* line 119, ../../../../sass/donortega.scss */
+.product-detail-image {
+  width: 100%;
+}
+
+/* line 123, ../../../../sass/donortega.scss */
+.product-detail-info-brand,
+.product-detail-info-description {
+  font-family: 'Roboto', sans-serif;
+  color: #999;
+}
+
+/* line 129, ../../../../sass/donortega.scss */
+.product-detail-info-title {
+  font-family: 'Georgia', serif;
+  font-size: 32px;
+}
+
+/* line 134, ../../../../sass/donortega.scss */
+.product-detail-info-price {
+  font-family: 'Georgia', serif;
+  color: #aaa;
+  font-size: 26px;
+}

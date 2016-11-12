@@ -20,15 +20,34 @@ app.config(['$stateProvider', function ($stateProvider) {
 
     var productState = {
         name: 'product',
-        url: '/product',
+        url: '/product/{productId}',
         views: {
             nav: {
                 templateUrl: 'views/nav.html'
             },
             content: {
                 templateUrl: 'views/product.html'
+                ,
+                resolve: {
+                    product: function(products, $stateParams) {
+                        console.log('qqq $stateParams:', $stateParams, products);
+                        products.getList().then(function(data) {
+                            console.log('qqq product detail:', data[$stateParams.productId]);
+                            return data[$stateParams.productId];
+                        });
+                    }
+                }
+                // ,
+                // controller: function($scope, product) {
+                //     $scope.product = product;
+                //     console.log('qqq product:', product);
+                // },
+                // controllerAs: '$ctrl'
             }
         }
+        // ,
+        // component: 'product'
+
     };
 
     var cartState = {
@@ -58,7 +77,6 @@ app.controller('StoreCtrl', ['$scope', 'products', function($scope, products) {
     self.cartCount = 0;
 
     products.getList().then(function(data) {
-        console.log('qqq data:', data);
         self.productList = data;
     });
 
@@ -73,15 +91,25 @@ app.service('products', ['$http', '$q', function($http, $q) {
     service.getList = function() {
         var deferred = $q.defer();
 
-        $http.get('/assets/json/products.json').then(
-            function(response) {
-                // success
-                deferred.resolve(response.data);
-            },
-            function(response) {
-                // failure
-            }
-        );
+        if (!sessionStorage.getItem('bigcommerce-productList')) {
+            $http.get('/assets/json/products.json').then(
+                function(response) {
+                    // success
+                    sessionStorage.setItem('bigcommerce-productList', JSON.stringify(response.data));
+                },
+                function(response) {
+                    // failure
+                }
+            );
+        }
+
+        deferred.resolve(JSON.parse(sessionStorage.getItem('bigcommerce-productList')));
+
+        return deferred.promise;
+    };
+
+    service.getItem = function(productId) {
+        var deferred = $q.defer();
 
         return deferred.promise;
     };
