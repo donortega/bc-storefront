@@ -25,22 +25,45 @@
         <ul class="list-inline">
             <li qqq-uib-dropdown class="dropdown open">
                 <a class="nav-link" href uib-dropdown-toggle>My Cart (<span ng-bind="ctrl.cart.length"></span>) <span class="caret"></span></a>
-                <ul class="nav-cart dropdown-menu dropdown-menu-right" uib-dropdown-menu>
-                    <li ng-if="ctrl.cart.length === 0"><a href ng-click>Cart is empty</a></li>
-                    <li class="nav-cart-item" ng-repeat="item in ctrl.cart">
-                        <div class="nav-cart-row row">
-                            <div class="col-xs-4">
-                                <a ui-sref="product({ productId: {{ ctrl.getProductIndex(item.product) }} })"><div class="nav-cart-image" style="background-image: url('/assets/i/{{ item.product.image }}')"></div></a>
+                <div class="dropdown-menu dropdown-menu-right" uib-dropdown-menu>
+                    <ul class="nav-cart">
+                        <li ng-if="ctrl.cart.length === 0">
+                            <div class="nav-cart-row row">
+                                <div class="col-xs-12 text-center">
+                                    <p class="nav-cart-info nav-cart-info-title">Cart is empty</p>
+                                </div>
                             </div>
-                            <div class="col-xs-6">
-                                <p class="nav-cart-info nav-cart-info-title"><a class="nav-cart-link" ui-sref="product({ productId: {{ ctrl.getProductIndex(item.product) }} })">{{ item.product.title }}</a> <span class="nav-cart-qty">x {{ item.qty }}</span></p>
-                                <p class="nav-cart-info nav-cart-info-brand">{{ item.product.brand }}</p>
-                                <p class="nav-cart-info nav-cart-info-price">{{ (item.product.price * item.qty) | currency : "$" : 2 }}</p>
+                        </li>
+                        <li class="nav-cart-item" ng-repeat="item in ctrl.cart">
+                            <div class="nav-cart-row row">
+                                <div class="col-xs-4">
+                                    <a ui-sref="product({ productId: {{ ctrl.getProductIndex(item.product) }} })"><div class="nav-cart-image" style="background-image: url('/assets/i/{{ item.product.image }}')"></div></a>
+                                </div>
+                                <div class="col-xs-6">
+                                    <p class="nav-cart-info nav-cart-info-title"><a class="nav-cart-link" ui-sref="product({ productId: {{ ctrl.getProductIndex(item.product) }} })">{{ item.product.title }}</a> <span class="nav-cart-qty">x {{ item.qty }}</span></p>
+                                    <p class="nav-cart-info nav-cart-info-brand">{{ item.product.brand }}</p>
+                                    <p class="nav-cart-info nav-cart-info-price">{{ (item.product.price * item.qty) | currency : "$" : 2 }}</p>
+                                </div>
+                                <div class="col-xs-2 text-right"><i class="fa fa-close"></i></div>
                             </div>
-                            <div class="col-xs-2 text-right"><i class="fa fa-close"></i></div>
+                        </li>
+                    </ul>
+                    <div class="nav-cart-footer" ng-if="ctrl.cart.length > 0">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="nav-cart-total clearfix">
+                                    <div class="pull-left">
+                                        Total
+                                    </div>
+                                    <div class="pull-right">
+                                        {{ ctrl.calculateTotal() | currency : "$" : 2 }}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </li>
-                </ul>
+                        <div class="nav-cart-row row"></div>
+                    </div>
+                </div>
             </li>
         </ul>
     </div>

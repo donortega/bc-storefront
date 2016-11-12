@@ -46,4 +46,14 @@ app.controller('StoreCtrl', ['$scope', 'products', function($scope, products) {
         sessionStorage.setItem('bigcommerce-cart', JSON.stringify(self.cart));
     };
 
+    self.calculateTotal = function() {
+        var total = 0;
+
+        self.cart.forEach(function(item) {
+            total = total + (item.product.price * item.qty);
+        });
+
+        return total;
+    };
+
 }]);

@@ -47,19 +47,21 @@ h2 {
 
 .nav-cart {
     width: 400px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .nav-cart-item {
-    margin-top: 30px;
+    margin-bottom: 30px;
 
-    &:first-child {
-        margin-top: 0;
+    &:last-child {
+        margin-bottom: 0;
     }
 }
 
 .nav-cart-row {
-    padding-left: 15px;
-    padding-right: 15px;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .nav-cart-image {
@@ -98,6 +100,21 @@ h2 {
     font-weight: normal;
     font-size: 10px;
     text-transform: none;
+}
+
+.nav-cart-total {
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid #ddd;
+
+    // font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    color: #bbb;
+    font-size: 12px;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
 }
 
 
