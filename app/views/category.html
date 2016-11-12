@@ -10,7 +10,7 @@
 <div class="container">
     <div class="row">
         <ul class="product-list">
-            <li class="product-list-container text-center col-xs-4" ng-repeat="item in ctrl.productList">
+            <li class="product-list-container text-center col-xs-4" ng-repeat="item in ctrl.productList track by $index">
                 <div class="product-list-image" style="background-image: url('/assets/i/{{ item.image }}')">
                     <div class="product-list-overlay-container">
                         <div class="product-list-overlay">

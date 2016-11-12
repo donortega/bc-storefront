@@ -36,7 +36,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="nav-cart-item" ng-repeat="item in ctrl.cart">
+                        <li class="nav-cart-item" ng-repeat="item in ctrl.cart track by $index">
                             <div class="nav-cart-row row">
                                 <div class="col-xs-4">
                                     <a ui-sref="product({ productId: {{ ctrl.getProductIndex(item.product) }} })"><div class="nav-cart-image" style="background-image: url('/assets/i/{{ item.product.image }}')"></div></a>
