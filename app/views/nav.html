@@ -23,8 +23,10 @@
         </ul>
     </div><div class="nav-cell col-xs-4 text-right">
         <ul class="list-inline">
-            <li uib-dropdown is-open="ctrl.cartIsOpen">
-                <a class="nav-link" href uib-dropdown-toggle>My Cart (<span ng-bind="ctrl.cart.length"></span>) <span class="caret"></span></a>
+            <li uib-dropdown auto-close="outsideClick">
+                <a id="MyCart" class="nav-link" href uib-dropdown-toggle>
+                    My Cart (<span ng-bind="ctrl.cart.length"></span>) <span class="caret"></span>
+                </a>
                 <div class="dropdown-menu dropdown-menu-right" uib-dropdown-menu>
                     <ul class="nav-cart">
                         <li ng-if="ctrl.cart.length === 0">
@@ -44,7 +46,9 @@
                                     <p class="nav-cart-info nav-cart-info-brand">{{ item.product.brand }}</p>
                                     <p class="nav-cart-info nav-cart-info-price">{{ (item.product.price * item.qty) | currency : "$" : 2 }}</p>
                                 </div>
-                                <div class="col-xs-2 text-right"><a class="nav-cart-link" href ng-click="ctrl.changeCart('remove', item.product);"><i class="fa fa-close"></i></a></div>
+                                <div class="col-xs-2 text-right">
+                                    <a class="nav-cart-link" href ng-click="ctrl.changeCart('remove', item.product, '', '', $event);"><i class="fa fa-close"></i></a>
+                                </div>
                             </div>
                         </li>
                     </ul>

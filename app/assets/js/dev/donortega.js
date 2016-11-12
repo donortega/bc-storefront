@@ -48,7 +48,7 @@ app.config(['$stateProvider', function ($stateProvider) {
 }]);
 
 
-app.controller('StoreCtrl', ['$scope', 'products', function($scope, products) {
+app.controller('StoreCtrl', ['$scope', '$timeout', 'products', function($scope, $timeout, products) {
     'use strict';
 
     var self = this;
@@ -78,7 +78,7 @@ app.controller('StoreCtrl', ['$scope', 'products', function($scope, products) {
         }
     };
 
-    self.changeCart = function(action, product, qtyToAdd, triggerCartPopup) {
+    self.changeCart = function(action, product, qtyToAdd, triggerCartPopup, $event) {
         // { product, qtyToAdd }
         var index = self.cart.findIndex(function(element) {
             return angular.equals(element.product, product);
@@ -93,15 +93,18 @@ app.controller('StoreCtrl', ['$scope', 'products', function($scope, products) {
             } else {
                 self.cart[index].qty = self.cart[index].qty + qtyToAdd;
             }
+
+            if (triggerCartPopup) {
+                $timeout(function() {
+                    angular.element( document.getElementById('MyCart') ).triggerHandler('click');
+                });
+            }
         } else if (action === 'remove') {
             self.cart.splice(index, 1);
+            $event.stopPropagation();
         }
 
         sessionStorage.setItem('bigcommerce-cart', JSON.stringify(self.cart));
-
-        if (triggerCartPopup) {
-            self.cartIsOpen = true;
-        }
     };
 
     self.calculateTotal = function() {
