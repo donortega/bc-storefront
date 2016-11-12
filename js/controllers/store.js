@@ -11,6 +11,7 @@ app.controller('StoreCtrl', ['$rootScope', '$scope', '$timeout', '$window', 'pro
     } else if ((localStorage.getItem('bigcommerce-cart').timestamp + (3.6e6)) < (new Date().getTime())) {
         self.cart = [];
 
+        console.warning('Cart last modified more than 1 hour ago. Automatically purging Cart data.');
         localStorage.removeItem('bigcommerce-cart');
     } else {
         self.cart = JSON.parse(localStorage.getItem('bigcommerce-cart')).cart;
