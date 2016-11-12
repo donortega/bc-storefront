@@ -3,7 +3,7 @@
         <div class="product-detail-breadcrumb text-center col-xs-12">
             <a class="product-detail-breadcrumb-link" ui-sref="category">Home</a> /
             <a class="product-detail-breadcrumb-link" ui-sref="category">Plates</a> /
-            <a class="product-detail-breadcrumb-link" ui-sref="category">[title]</a>
+            <span class="product-detail-breadcrumb-link product-detail-breadcrumb-link-current">[title]</span>
         </div>
     </div>
 </div>
@@ -21,6 +21,19 @@
             <p class="product-detail-info product-detail-info-description">qqq Lorem ipsum description</p>
 
             <hr />
+
+            <div class="row">
+                <div class="product-action col-xs-4">
+                    <span class="product-action-qty" ng-bind="ctrl.qtyToAdd">1</span>
+                    <div class="product-action-increment-container">
+                        <a href ng-click="ctrl.qtyToAdd = ctrl.qtyToAdd + 1;" class="product-action-increment">+</a>
+                        <a href ng-click="ctrl.qtyDecrease();" class="product-action-increment">-</a>
+                    </div>
+                </div>
+                <div class="product-action col-xs-4">
+                    <a href ng-click class="product-action-btn">Add to Cart</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>

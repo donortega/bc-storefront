@@ -72,8 +72,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url("../fonts/font-awesome/fontawesome-webfont.eot?v=4.7.0");
-  src: url("../fonts/font-awesome/fontawesome-webfont.eot?#iefix&v=4.7.0") format("embedded-opentype"), url("../fonts/font-awesome/fontawesome-webfont.woff2?v=4.7.0") format("woff2"), url("../fonts/font-awesome/fontawesome-webfont.woff?v=4.7.0") format("woff"), url("../fonts/font-awesome/fontawesome-webfont.ttf?v=4.7.0") format("truetype"), url("../fonts/font-awesome/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg");
+  src: url("../../fonts/font-awesome/fontawesome-webfont.eot?v=4.7.0");
+  src: url("../../fonts/font-awesome/fontawesome-webfont.eot?#iefix&v=4.7.0") format("embedded-opentype"), url("../../fonts/font-awesome/fontawesome-webfont.woff2?v=4.7.0") format("woff2"), url("../../fonts/font-awesome/fontawesome-webfont.woff?v=4.7.0") format("woff"), url("../../fonts/font-awesome/fontawesome-webfont.ttf?v=4.7.0") format("truetype"), url("../../fonts/font-awesome/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -12713,35 +12713,113 @@ h2 {
 /* line 106, ../../../../sass/donortega.scss */
 .product-detail-breadcrumb-link, .product-detail-breadcrumb-link:hover, .product-detail-breadcrumb-link:active, .product-detail-breadcrumb-link:focus {
   font-family: 'Roboto', sans-serif;
+  font-weight: bold;
   color: black;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+}
+/* line 118, ../../../../sass/donortega.scss */
+.product-detail-breadcrumb-link.product-detail-breadcrumb-link-current, .product-detail-breadcrumb-link.product-detail-breadcrumb-link-current:hover, .product-detail-breadcrumb-link.product-detail-breadcrumb-link-current:active, .product-detail-breadcrumb-link.product-detail-breadcrumb-link-current:focus {
+  color: #aaa;
 }
 
-/* line 115, ../../../../sass/donortega.scss */
+/* line 127, ../../../../sass/donortega.scss */
 .product-detail-container {
   margin-top: 60px;
+  margin-bottom: 60px;
 }
 
-/* line 119, ../../../../sass/donortega.scss */
+/* line 132, ../../../../sass/donortega.scss */
 .product-detail-image {
   width: 100%;
 }
 
-/* line 123, ../../../../sass/donortega.scss */
+/* line 136, ../../../../sass/donortega.scss */
 .product-detail-info-brand,
 .product-detail-info-description {
   font-family: 'Roboto', sans-serif;
   color: #999;
 }
 
-/* line 129, ../../../../sass/donortega.scss */
+/* line 142, ../../../../sass/donortega.scss */
 .product-detail-info-title {
   font-family: 'Georgia', serif;
   font-size: 32px;
 }
 
-/* line 134, ../../../../sass/donortega.scss */
+/* line 147, ../../../../sass/donortega.scss */
 .product-detail-info-price {
   font-family: 'Georgia', serif;
   color: #aaa;
   font-size: 26px;
+}
+
+/* line 154, ../../../../sass/donortega.scss */
+.product-action {
+  float: none;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  padding: 0;
+}
+
+/* line 160, ../../../../sass/donortega.scss */
+.product-action-qty {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  padding: 20px;
+  background: #eee;
+}
+
+/* line 166, ../../../../sass/donortega.scss */
+.product-action-increment-container {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+}
+
+/* line 170, ../../../../sass/donortega.scss */
+.product-action-increment {
+  display: block;
+  margin-top: 2px;
+  padding: 5px;
+  background: #dadada;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+}
+/* line 180, ../../../../sass/donortega.scss */
+.product-action-increment:first-child {
+  margin-top: 0;
+}
+/* line 184, ../../../../sass/donortega.scss */
+.product-action-increment, .product-action-increment:hover, .product-action-increment:active, .product-action-increment:focus {
+  color: black;
+  text-decoration: none;
+}
+
+/* line 193, ../../../../sass/donortega.scss */
+.product-action-btn {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  padding: 15px 15px;
+  background: black;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+/* line 202, ../../../../sass/donortega.scss */
+.product-action-btn, .product-action-btn:hover, .product-action-btn:active, .product-action-btn:focus {
+  color: white;
+  text-decoration: none;
 }

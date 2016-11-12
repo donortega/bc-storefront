@@ -2,7 +2,7 @@
 @import 'compass/css3';
 
 // Specify font path to Font Awesome
-$fa-font-path: '../fonts/font-awesome';
+$fa-font-path: '../../fonts/font-awesome';
 @import 'font-awesome';
 
 @import 'bootstrap';
@@ -108,12 +108,25 @@ h2 {
     &:active,
     &:focus {
         font-family: 'Roboto', sans-serif;
+        font-weight: bold;
         color: black;
+        letter-spacing: 0.10em;
+        text-transform: uppercase;
+    }
+
+    &.product-detail-breadcrumb-link-current {
+        &,
+        &:hover,
+        &:active,
+        &:focus {
+            color: #aaa;
+        }
     }
 }
 
 .product-detail-container {
     margin-top: 60px;
+    margin-bottom: 60px;
 }
 
 .product-detail-image {
@@ -135,4 +148,62 @@ h2 {
     font-family: 'Georgia', serif;
     color: #aaa;
     font-size: 26px;
+}
+
+
+.product-action {
+    float: none;
+    @include inline-block;
+    padding: 0;
+}
+
+.product-action-qty {
+    @include inline-block;
+    padding: 20px;
+    background: #eee;
+}
+
+.product-action-increment-container {
+    @include inline-block;
+}
+
+.product-action-increment {
+    display: block;
+    margin-top: 2px;
+    padding: 5px;
+    background: #dadada;
+
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+        color: black;
+        text-decoration: none;
+    }
+}
+
+.product-action-btn {
+    @include inline-block;
+    padding: 15px 15px;
+    background: black;
+
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+        color: white;
+        text-decoration: none;
+    }
 }
