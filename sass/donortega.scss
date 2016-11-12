@@ -16,6 +16,19 @@ h2 {
     font-family: 'Georgia', serif;
 }
 
+a {
+    font-family: 'Roboto', sans-serif;
+
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+        color: black;
+        text-decoration: none;
+    }
+}
+
+
 .nav-row {
     padding-top: 15px;
     padding-bottom: 15px;
@@ -38,9 +51,7 @@ h2 {
     &:hover,
     &:active,
     &:focus {
-        color: black;
         letter-spacing: 0.10em;
-        text-decoration: none;
         text-transform: uppercase;
     }
 }
@@ -85,16 +96,6 @@ h2 {
     }
 }
 
-.nav-cart-link {
-    &,
-    &:hover,
-    &:active,
-    &:focus {
-        color: black;
-        text-decoration: none;
-    }
-}
-
 .nav-cart-qty {
     color: #999;
     font-weight: normal;
@@ -113,7 +114,6 @@ h2 {
     padding-bottom: 20px;
     border-top: 1px solid #ddd;
 
-    // font-family: 'Roboto', sans-serif;
     font-weight: normal;
     color: #bbb;
     font-size: 12px;
@@ -131,21 +131,10 @@ h2 {
     &:hover,
     &:active,
     &:focus {
-        font-family: 'Roboto', sans-serif;
         font-weight: bold;
         font-size: 12px;
         letter-spacing: 0.10em;
-        text-decoration: none;
         text-transform: uppercase;
-    }
-
-    &.nav-cart-button-cart {
-        &,
-        &:hover,
-        &:active,
-        &:focus {
-            color: black;
-        }
     }
 
     &.nav-cart-button-checkout {
@@ -222,11 +211,8 @@ h2 {
     &:hover,
     &:active,
     &:focus {
-        font-family: 'Roboto', sans-serif;
         font-weight: bold;
-        color: black;
         letter-spacing: 0.10em;
-        text-decoration: none;
         text-transform: uppercase;
     }
 
@@ -296,14 +282,6 @@ h2 {
     &:first-child {
         margin-top: 0;
     }
-
-    &,
-    &:hover,
-    &:active,
-    &:focus {
-        color: black;
-        text-decoration: none;
-    }
 }
 
 .product-action-btn {
@@ -320,6 +298,5 @@ h2 {
     &:active,
     &:focus {
         color: white;
-        text-decoration: none;
     }
 }

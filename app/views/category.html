@@ -11,9 +11,13 @@
     <div class="row">
         <ul class="product-list">
             <li class="product-list-container text-center col-xs-4" ng-repeat="item in ctrl.productList">
-                <a ui-sref="product({ productId: {{ $index }} })"><div class="product-list-image" style="background-image: url('/assets/i/{{ item.image }}')"></div></a>
+                <div class="product-list-image" style="background-image: url('/assets/i/{{ item.image }}')">
+                    <!--  -->
+                </div>
                 <p class="product-list-info product-list-info-brand">{{ item.brand }}</p>
-                <p class="product-list-info product-list-info-title">{{ item.title }}</p>
+                <p class="product-list-info product-list-info-title">
+                    <a ui-sref="product({ productId: {{ $index }} })">{{ item.title }}</a>
+                </p>
                 <p class="product-list-price">{{ item.price | currency : "$" : 2 }}</p>
             </li>
         </ul>
