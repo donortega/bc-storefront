@@ -4,16 +4,16 @@ console.info('Don Ortega --- BigCommerce');
 
 var app = angular.module('bcDonOrtega', ['ngAnimate', 'ngTouch', 'ui.bootstrap', 'ui.router']);
 
-app.config(['$stateProvider', function ($stateProvider) {
+app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
     var states = [
         {
             name: 'store',
-            url: '',
+            url: '/',
             templateUrl: 'views/category.html'
         },
         {
             name: 'category',
-            url: '',
+            url: '/',
             // parent: 'store',
             templateUrl: 'views/category.html'
         },
@@ -44,5 +44,7 @@ app.config(['$stateProvider', function ($stateProvider) {
     states.forEach(function(state) {
         $stateProvider.state(state);
     });
+
+    $urlRouterProvider.otherwise('/');
 
 }]);
