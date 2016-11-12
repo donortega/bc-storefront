@@ -12955,13 +12955,14 @@ a, a:hover, a:active, a:focus {
   *vertical-align: auto;
   *zoom: 1;
   *display: inline;
-  padding: 15px 15px;
+  padding: 20px 25px;
   background: black;
   font-family: 'Roboto', sans-serif;
+  font-size: 12px;
   font-weight: bold;
   text-transform: uppercase;
 }
-/* line 344, ../../../../sass/donortega.scss */
+/* line 345, ../../../../sass/donortega.scss */
 .product-action-btn, .product-action-btn:hover, .product-action-btn:active, .product-action-btn:focus {
   color: white;
 }

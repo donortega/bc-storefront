@@ -334,10 +334,11 @@ a {
 
 .product-action-btn {
     @include inline-block;
-    padding: 15px 15px;
+    padding: 20px 25px;
     background: black;
 
     font-family: 'Roboto', sans-serif;
+    font-size: 12px;
     font-weight: bold;
     text-transform: uppercase;
 
