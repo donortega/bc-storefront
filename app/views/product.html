@@ -3,7 +3,7 @@
         <div class="product-detail-breadcrumb text-center col-xs-12">
             <a class="product-detail-breadcrumb-link" ui-sref="category">Home</a> /
             <a class="product-detail-breadcrumb-link" ui-sref="category">Plates</a> /
-            <span class="product-detail-breadcrumb-link product-detail-breadcrumb-link-current">[title]</span>
+            <span class="product-detail-breadcrumb-link product-detail-breadcrumb-link-current">{{ product.title }}</span>
         </div>
     </div>
 </div>
@@ -11,14 +11,14 @@
 <div class="product-detail-container container">
     <div class="row">
         <div class="col-xs-8">
-            <img class="product-detail-image" src="/assets/i/hand-painted-blue-flat-dish.jpg" alt="" title="" />
+            <img class="product-detail-image" ng-src="/assets/i/{{ product.image }}" alt="{{ product.title }}" title="{{ product.title }}" />
         </div>
 
         <div class="text-center col-xs-4">
-            <p class="product-detail-info product-detail-info-brand">qqq Kiriko</p>
-            <p class="product-detail-info product-detail-info-title">qqq Hand Painted Blue Flat Dish</p>
-            <p class="product-detail-info-price">qqq $28.00</p>
-            <p class="product-detail-info product-detail-info-description">qqq Lorem ipsum description</p>
+            <p class="product-detail-info product-detail-info-brand">{{ product.brand }}</p>
+            <p class="product-detail-info product-detail-info-title">{{ product.title }}</p>
+            <p class="product-detail-info-price">{{ product.price | currency : "$" : 2 }}</p>
+            <p class="product-detail-info product-detail-info-description">{{ product.description }}</p>
 
             <hr />
 

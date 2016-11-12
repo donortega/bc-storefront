@@ -23,11 +23,5 @@ app.service('products', ['$http', '$q', function($http, $q) {
         return deferred.promise;
     };
 
-    service.getItem = function(productId) {
-        var deferred = $q.defer();
-
-        return deferred.promise;
-    };
-
     return service;
 }]);

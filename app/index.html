@@ -8,8 +8,8 @@
 </head>
 
 <body ng-controller="StoreCtrl as ctrl">
-    <div class="container-fluid" ui-view name="nav"></div>
-    <div ui-view name="content"></div>
+    <div class="container-fluid" ng-include="'views/nav.html'"></div>
+    <div ui-view></div>
 
     <script src="/assets/js/build/vendor.min.js"></script>
     <script src="/assets/js/dev/donortega.js"></script>

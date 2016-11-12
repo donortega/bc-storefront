@@ -5,67 +5,46 @@ console.info('Don Ortega --- BigCommerce');
 var app = angular.module('bcDonOrtega', ['ngAnimate', 'ngTouch', 'ui.bootstrap', 'ui.router']);
 
 app.config(['$stateProvider', function ($stateProvider) {
-    var categoryState = {
-        name: 'category',
-        url: '',
-        views: {
-            nav: {
-                templateUrl: 'views/nav.html'
-            },
-            content: {
-                templateUrl: 'views/category.html'
-            }
-        }
-    };
-
-    var productState = {
-        name: 'product',
-        url: '/product/{productId}',
-        views: {
-            nav: {
-                templateUrl: 'views/nav.html'
-            },
-            content: {
-                templateUrl: 'views/product.html'
-                ,
-                resolve: {
-                    product: function(products, $stateParams) {
-                        console.log('qqq $stateParams:', $stateParams, products);
-                        products.getList().then(function(data) {
-                            console.log('qqq product detail:', data[$stateParams.productId]);
-                            return data[$stateParams.productId];
-                        });
-                    }
+    var states = [
+        {
+            name: 'store',
+            url: '',
+            templateUrl: 'views/category.html'
+        },
+        {
+            name: 'category',
+            url: '',
+            // parent: 'store',
+            templateUrl: 'views/category.html'
+        },
+        {
+            name: 'product',
+            url: '/product/{productId}',
+            // parent: 'store',
+            templateUrl: 'views/product.html',
+            resolve: {
+                product: function(products, $stateParams) {
+                    return products.getList().then(function(data) {
+                        return data[$stateParams.productId];
+                    });
                 }
-                // ,
-                // controller: function($scope, product) {
-                //     $scope.product = product;
-                //     console.log('qqq product:', product);
-                // },
-                // controllerAs: '$ctrl'
-            }
-        }
-        // ,
-        // component: 'product'
-
-    };
-
-    var cartState = {
-        name: 'cart',
-        url: '/cart',
-        views: {
-            nav: {
-                templateUrl: 'views/nav.html'
             },
-            content: {
-                templateUrl: 'views/cart.html'
+            controller: function($scope, product) {
+                $scope.product = product;
             }
+        },
+        {
+            name: 'cart',
+            url: '/cart',
+            // parent: 'store',
+            templateUrl: 'views/cart.html'
         }
-    };
+    ];
 
-    $stateProvider.state(categoryState);
-    $stateProvider.state(productState);
-    $stateProvider.state(cartState);
+    states.forEach(function(state) {
+        $stateProvider.state(state);
+    });
+
 }]);
 
 
@@ -111,12 +90,6 @@ app.service('products', ['$http', '$q', function($http, $q) {
         }
 
         deferred.resolve(JSON.parse(sessionStorage.getItem('bigcommerce-productList')));
-
-        return deferred.promise;
-    };
-
-    service.getItem = function(productId) {
-        var deferred = $q.defer();
 
         return deferred.promise;
     };
