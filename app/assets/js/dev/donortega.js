@@ -48,7 +48,7 @@ app.config(['$stateProvider', function ($stateProvider) {
 }]);
 
 
-app.controller('StoreCtrl', ['$scope', '$timeout', 'products', function($scope, $timeout, products) {
+app.controller('StoreCtrl', ['$rootScope', '$scope', '$timeout', 'products', function($rootScope, $scope, $timeout, products) {
     'use strict';
 
     var self = this;
@@ -123,6 +123,10 @@ app.controller('StoreCtrl', ['$scope', '$timeout', 'products', function($scope, 
 
         return total;
     };
+
+    $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
+        self.qtyToAdd = 1;
+    });
 
 }]);
 
