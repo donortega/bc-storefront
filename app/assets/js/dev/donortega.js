@@ -78,7 +78,7 @@ app.controller('StoreCtrl', ['$scope', 'products', function($scope, products) {
         }
     };
 
-    self.changeCart = function(action, product, qtyToAdd) {
+    self.changeCart = function(action, product, qtyToAdd, triggerCartPopup) {
         // { product, qtyToAdd }
         var index = self.cart.findIndex(function(element) {
             return angular.equals(element.product, product);
@@ -98,6 +98,10 @@ app.controller('StoreCtrl', ['$scope', 'products', function($scope, products) {
         }
 
         sessionStorage.setItem('bigcommerce-cart', JSON.stringify(self.cart));
+
+        if (triggerCartPopup) {
+            self.cartIsOpen = true;
+        }
     };
 
     self.calculateTotal = function() {
