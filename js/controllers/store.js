@@ -59,10 +59,14 @@ app.controller('StoreCtrl', ['$rootScope', '$scope', '$timeout', '$window', 'pro
             $event.stopPropagation();
         }
 
-        localStorage.setItem('bigcommerce-cart', JSON.stringify({
-            cart: self.cart,
-            timestamp: new Date().getTime()
-        }));
+        if (self.cart.length) {
+            localStorage.setItem('bigcommerce-cart', JSON.stringify({
+                cart: self.cart,
+                timestamp: new Date().getTime()
+            }));
+        } else {
+            localStorage.removeItem('bigcommerce-cart');
+        }
     };
 
     self.calculateTotal = function() {
