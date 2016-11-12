@@ -45,6 +45,61 @@ h2 {
     }
 }
 
+.nav-cart {
+    width: 400px;
+}
+
+.nav-cart-item {
+    margin-top: 30px;
+
+    &:first-child {
+        margin-top: 0;
+    }
+}
+
+.nav-cart-row {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.nav-cart-image {
+    width: 100%;
+    height: 80px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.nav-cart-info {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    &.nav-cart-info-brand {
+        color: #bbb;
+        font-size: 10px;
+    }
+}
+
+.nav-cart-link {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+        color: black;
+        text-decoration: none;
+    }
+}
+
+.nav-cart-qty {
+    color: #999;
+    font-weight: normal;
+    font-size: 10px;
+    text-transform: none;
+}
+
 
 .category-header {
     margin-bottom: 30px;

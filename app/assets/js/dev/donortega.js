@@ -66,6 +66,12 @@ app.controller('StoreCtrl', ['$scope', 'products', function($scope, products) {
         self.productList = data;
     });
 
+    self.getProductIndex = function(product) {
+        return self.productList.findIndex(function(element) {
+            return angular.equals(element, product);
+        });
+    };
+
     self.qtyDecrease = function() {
         if (self.qtyToAdd > 1) {
             self.qtyToAdd--;
