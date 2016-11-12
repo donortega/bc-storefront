@@ -74,7 +74,7 @@ module.exports = function(grunt) {
             // trigger livereload when html markup changes
             views: {
                 files: [
-                    '<%= appConfig.compassHttpPath %>/*.html'
+                    '<%= appConfig.compassHttpPath %>/{,*/}*.html'
                 ],
                 options: {
                     livereload: true
