@@ -55,12 +55,14 @@ app.controller('StoreCtrl', ['$rootScope', '$scope', '$timeout', '$window', 'pro
 
     var self = this;
 
+    const CART_EXPIRE = 5; // in minutes
+
     self.cartCount = 0;
     self.qtyToAdd = 1;
 
     if (!localStorage.getItem('bigcommerce-cart')) {
         self.cart = [];
-    } else if ((localStorage.getItem('bigcommerce-cart').timestamp + (3.6e6)) < (new Date().getTime())) {
+    } else if ((localStorage.getItem('bigcommerce-cart').timestamp + (60000 * CART_EXPIRE)) < (new Date().getTime())) {
         self.cart = [];
 
         console.warning('Cart last modified more than 1 hour ago. Automatically purging Cart data.');
