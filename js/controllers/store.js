@@ -8,20 +8,22 @@ app.controller('StoreCtrl', ['$rootScope', '$scope', '$timeout', '$window', 'pro
     self.cartCount = 0;
     self.qtyToAdd = 1;
 
-    if (!localStorage.getItem('bigcommerce-cart')) {
-        self.cart = [];
-    } else if ((JSON.parse(localStorage.getItem('bigcommerce-cart')).timestamp + (60000 * CART_EXPIRE)) < (new Date().getTime())) {
-        self.cart = [];
+    self.init = function() {
+        products.getList().then(function(data) {
+            self.productList = data;
+        });
 
-        console.log('Cart timestamp is too old. Automatically purging Cart data.');
-        localStorage.removeItem('bigcommerce-cart');
-    } else {
-        self.cart = JSON.parse(localStorage.getItem('bigcommerce-cart')).cart;
-    }
+        if (!localStorage.getItem('bigcommerce-cart')) {
+            self.cart = [];
+        } else if ((JSON.parse(localStorage.getItem('bigcommerce-cart')).timestamp + (60000 * CART_EXPIRE)) < (new Date().getTime())) {
+            self.cart = [];
 
-    products.getList().then(function(data) {
-        self.productList = data;
-    });
+            console.log('Cart timestamp is too old. Automatically purging Cart data.');
+            localStorage.removeItem('bigcommerce-cart');
+        } else {
+            self.cart = JSON.parse(localStorage.getItem('bigcommerce-cart')).cart;
+        }
+    };
 
     self.getProductIndex = function(product) {
         return self.productList.findIndex(function(element) {

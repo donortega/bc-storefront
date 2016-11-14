@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
 </head>
 
-<body ng-controller="StoreCtrl as ctrl">
+<body ng-controller="StoreCtrl as ctrl" ng-init="ctrl.init();">
     <div class="container-fluid" ng-include="'views/nav.html'"></div>
     <div ui-view></div>
 
