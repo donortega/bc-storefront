@@ -9,6 +9,7 @@ by Don Ortega
 
 ### Run application
     grunt dev
+Application will be available at http://localhost:9000
 
 ### Frameworks used
 
