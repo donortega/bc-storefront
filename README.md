@@ -9,7 +9,11 @@ by Don Ortega
 
 ### Run application
     grunt dev
-Application will be available at http://localhost:9000
+Application will be available at http://localhost:9000.
+
+### Unit testing
+    grunt test
+This will run Jasmine tests using Google Chrome.
 
 ### Frameworks used
 
@@ -19,4 +23,3 @@ Application will be available at http://localhost:9000
 ### Compromises
 
 - Using Web Storage to cache products JSON and store Shopping Cart data. In Safari, Web Storage is not available when in Private Browsing mode.
-- Unit testing: Unable to set up properly due to time constraints.
