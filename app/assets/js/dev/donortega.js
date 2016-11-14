@@ -66,7 +66,6 @@ app.controller('StoreCtrl', ['$rootScope', '$scope', '$timeout', '$window', 'pro
         self.cart = [];
 
         console.log('Cart timestamp is too old. Automatically purging Cart data.');
-        // console.log(`Cart last modified more than ${CART_EXPIRE} minute(s) ago. Automatically purging Cart data.`);
         localStorage.removeItem('bigcommerce-cart');
     } else {
         self.cart = JSON.parse(localStorage.getItem('bigcommerce-cart')).cart;
