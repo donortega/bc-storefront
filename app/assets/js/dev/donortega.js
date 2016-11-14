@@ -5,7 +5,7 @@ console.info('Don Ortega --- BigCommerce');
 var app = angular.module('bcDonOrtega', ['ngAnimate', 'ngTouch', 'ui.bootstrap', 'ui.router']);
 
 app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
-    // define application state for routing
+    // define application states for routing
     var states = [
         {
             name: 'store',
