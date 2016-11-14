@@ -14,6 +14,7 @@ module.exports = function(grunt) {
             jsSource: 'js',
             jsDevPath: 'app/assets/js/dev',
             jsBuildPath: 'app/assets/js/build',
+            jsTestsPath: 'js-tests',
             dataPath: 'app/assets/json',
             compassSource: 'sass',
             compassHttpPath: 'app',
@@ -214,6 +215,27 @@ module.exports = function(grunt) {
                     logConcurrentOutput: true
                 }
             }
+        },
+
+
+        karma: {
+            tests: {
+                options: {
+                    frameworks: [
+                        'jasmine'
+                    ],
+                    singleRun: true,
+                    browsers: [
+                        'Chrome'
+                    ],
+                    files: [
+                        '<%= appConfig.jsDevPath %>/vendor.js',
+                        '<%= appConfig.bowerSource %>/angular-mocks/angular-mocks.js',
+                        '<%= appConfig.jsDevPath %>/donortega.js',
+                        '<%= appConfig.jsTestsPath %>/**/*.js',
+                    ]
+                }
+            }
         }
     });
 
@@ -263,6 +285,15 @@ module.exports = function(grunt) {
     grunt.registerTask('buildVendorScripts', [
         'concat:vendorScripts',
         'uglify:vendorScripts'
+    ]);
+
+    /**
+    * Run Karma unit-testing
+    *
+    * Command: grunt test
+    */
+    grunt.registerTask('test', [
+        'karma'
     ]);
 
 };

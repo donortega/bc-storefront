@@ -58,12 +58,12 @@ app.controller('StoreCtrl', ['$rootScope', '$scope', '$timeout', '$window', 'pro
     self.cartCount = 0;
     self.qtyToAdd = 1;
 
-    self.init = function() {
+    self.init = function(testing) { // 'testing' is used to determine if we are unit testing (need to force-create a new Cart)
         products.getList().then(function(data) {
             self.productList = data;
         });
 
-        if (!localStorage.getItem('bigcommerce-cart')) {
+        if (!localStorage.getItem('bigcommerce-cart') || testing) {
             // cart is empty
             self.cart = [];
         } else if ((JSON.parse(localStorage.getItem('bigcommerce-cart')).timestamp + (60000 * CART_EXPIRE)) < (new Date().getTime())) {
