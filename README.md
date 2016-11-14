@@ -13,10 +13,10 @@ Application will be available at http://localhost:9000
 
 ### Frameworks used
 
-**ui-bootstrap:** Bootstrap functionality made usable by Angular directives.
-**ui-router:** Easy to define application states and set up routes within application.
+- **ui-bootstrap:** Bootstrap functionality made usable by Angular directives.
+- **ui-router:** Easy to define application states and set up routes within application.
 
 ### Compromises
 
-Using Web Storage to cache products JSON and store Shopping Cart data. In Safari, Web Storage is not available when in Private Browsing mode.
-Unit testing: Unable to set up properly due to time constraints.
+- Using Web Storage to cache products JSON and store Shopping Cart data. In Safari, Web Storage is not available when in Private Browsing mode.
+- Unit testing: Unable to set up properly due to time constraints.
