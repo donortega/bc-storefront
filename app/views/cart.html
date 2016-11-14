@@ -3,17 +3,17 @@
 
     <div class="cart-container container">
         <div ng-if="ctrl.cart.length">
-            <table>
+            <table class="table">
                 <thead>
                     <th>Product</th>
                     <th>Quantity</th>
                     <th>Total</th>
-                    <th>Action</th>
+                    <th class="text-right">Action</th>
                 </thead>
                 <tbody>
                     <tr ng-repeat="item in ctrl.cart track by $index">
                         <td>
-                            <div class="nav-cart-row row">
+                            <div class="row">
                                 <div class="col-xs-4">
                                     <a ui-sref="product({ productId: {{ ctrl.getProductIndex(item.product) }} })"><div class="nav-cart-image" style="background-image: url('/assets/i/{{ item.product.image }}')"></div></a>
                                 </div>
@@ -24,18 +24,20 @@
                             </div>
                         </td>
                         <td>
-                            <div class="product-action col-xs-4">
-                                <span class="product-action-qty" ng-bind="item.qty">1</span>
-                                <div class="product-action-increment-container">
-                                    <a href ng-click="ctrl.qtyToAdd = ctrl.qtyToAdd + 1;" class="product-action-increment">+</a>
-                                    <a href ng-click="ctrl.qtyDecrease();" class="product-action-increment">-</a>
+                            <div class="nav-cart-row row">
+                                <div class="product-action col-xs-12">
+                                    <span class="product-action-qty" ng-bind="item.qty">1</span>
+                                    <div class="product-action-increment-container">
+                                        <a href ng-click="ctrl.changeCart('plus1', item.product);" class="product-action-increment">+</a>
+                                        <a href ng-click="ctrl.changeCart('minus1', item.product);" class="product-action-increment">-</a>
+                                    </div>
                                 </div>
                             </div>
                         </td>
                         <td>
                             <p class="nav-cart-info nav-cart-info-price">{{ (item.product.price * item.qty) | currency : "$" : 2 }}</p>
                         </td>
-                        <td>
+                        <td class="text-right">
                             <a class="nav-cart-link" href ng-click="ctrl.changeCart('remove', item.product, '', '', $event);"><i class="fa fa-close fa-2x"></i></a>
                         </td>
                     </tr>

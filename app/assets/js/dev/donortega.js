@@ -55,7 +55,7 @@ app.controller('StoreCtrl', ['$rootScope', '$scope', '$timeout', '$window', 'pro
 
     var self = this;
 
-    const CART_EXPIRE = 5; // in minutes
+    const CART_EXPIRE = 60; // in minutes
 
     self.cartCount = 0;
     self.qtyToAdd = 1;
@@ -112,6 +112,12 @@ app.controller('StoreCtrl', ['$rootScope', '$scope', '$timeout', '$window', 'pro
         } else if (action === 'remove') {
             self.cart.splice(index, 1);
             $event.stopPropagation();
+        } else if (action === 'plus1') {
+            self.cart[index].qty = self.cart[index].qty + 1;
+        } else if (action === 'minus1') {
+            if (self.cart[index].qty > 1) {
+                self.cart[index].qty = self.cart[index].qty - 1;
+            }
         }
 
         if (self.cart.length) {
