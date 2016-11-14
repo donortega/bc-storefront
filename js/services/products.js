@@ -5,7 +5,9 @@ app.service('products', ['$http', '$q', function($http, $q) {
 
     service.getList = function() {
         return $q(function(resolve, reject) {
+            // check if products JSON has already been cached in sessionStorage
             if (!sessionStorage.getItem('bigcommerce-productList')) {
+                // products JSON not in sessionStorage, go fetch data then place in sessionStorage
                 $http.get('/assets/json/products.json').then(
                     function(response) {
                         // success
@@ -19,6 +21,7 @@ app.service('products', ['$http', '$q', function($http, $q) {
                     }
                 );
             } else {
+                // retrieve cached products JSON from sessionStorage
                 resolve(JSON.parse(sessionStorage.getItem('bigcommerce-productList')));
             }
         });

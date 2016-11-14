@@ -5,6 +5,7 @@ console.info('Don Ortega --- BigCommerce');
 var app = angular.module('bcDonOrtega', ['ngAnimate', 'ngTouch', 'ui.bootstrap', 'ui.router']);
 
 app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+    // define application states for routing
     var states = [
         {
             name: 'store',
@@ -14,13 +15,11 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
         {
             name: 'category',
             url: '/',
-            // parent: 'store',
             templateUrl: 'views/category.html'
         },
         {
             name: 'product',
             url: '/product/{productId}',
-            // parent: 'store',
             templateUrl: 'views/product.html',
             resolve: {
                 product: function(products, $stateParams) {
@@ -36,7 +35,6 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
         {
             name: 'cart',
             url: '/cart',
-            // parent: 'store',
             templateUrl: 'views/cart.html'
         }
     ];
