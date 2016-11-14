@@ -27,6 +27,30 @@ a {
     }
 }
 
+
+.table {
+    // width: 95%;
+    margin: 0 auto 25px auto;
+
+    > thead > tr > th {
+        padding-left: 0;
+        padding-right: 0;
+
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        color: #ddd;
+        font-size: 12px;
+        letter-spacing: 0.10em;
+        text-transform: uppercase;
+    }
+
+    > tbody > tr > td {
+        padding: 25px 0 65px 0;
+        border-bottom: 1px solid #bbb;
+    }
+}
+
+
 .border-white {
     border-bottom: 1px solid white;
 }
@@ -366,4 +390,65 @@ a {
     padding-top: 90px;
     padding-bottom: 90px;
     background: white;
+}
+
+.cart-info-price {
+    font-family: 'Georgia', serif;
+    font-size: 16px;
+    color: #bbb;
+}
+
+.cart-action {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+        color: #bbb;
+    }
+}
+
+.cart-overview-item {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-left: 0;
+    padding-right: 0;
+
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    color: #bbb;
+    font-size: 12px;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+}
+
+.cart-footer {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid #bbb;
+}
+
+.cart-footer-item {
+    font-size: 12px;
+    font-weight: bold;
+
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+        letter-spacing: 0.10em;
+        text-transform: uppercase;
+    }
+
+    &.cart-footer-item-checkout {
+        display: block;
+        padding: 15px 20px;
+        background-color: black;
+
+        &,
+        &:hover,
+        &:active,
+        &:focus {
+            color: white;
+        }
+    }
 }
