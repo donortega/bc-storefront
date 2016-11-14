@@ -9,3 +9,8 @@ by Don Ortega
 
 ### Run application
     grunt dev
+
+### Frameworks used
+
+**ui-bootstrap:** Bootstrap functionality made usable by Angular directives.
+**ui-router:** Easy to define application states and set up routes within application.
