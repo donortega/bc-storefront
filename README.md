@@ -18,3 +18,4 @@ by Don Ortega
 ### Compromises
 
 Using Web Storage to cache products JSON and store Shopping Cart data. In Safari, Web Storage is not available when in Private Browsing mode.
+Unit testing: Unable to set up properly due to time constraints.
