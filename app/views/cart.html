@@ -66,8 +66,9 @@
             </div>
         </div>
 
-        <div ng-if="!ctrl.cart.length">
-            Cart is empty
+        <div class="text-center" ng-if="!ctrl.cart.length">
+            <p>Cart is empty</p>
+            <p><a class="cart-footer-item" ui-sref="store">Begin Shopping</a></p>
         </div>
     </div>
 </div>
