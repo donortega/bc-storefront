@@ -78,4 +78,30 @@ describe('Don Ortega --- BigCommerce TEST', function() {
             expect($scope.ctrl.calculateTotal()).toBe(sampleProduct.price * qty);
         });
     });
+
+    describe('Products service', function() {
+        var $httpBackend, products;
+
+        beforeEach(function() {
+            inject(function(_$httpBackend_, _products_) {
+                $httpBackend = _$httpBackend_;
+                products = _products_;
+            });
+        });
+
+        afterEach(function() {
+            $httpBackend.verifyNoOutstandingExpectation();
+            $httpBackend.verifyNoOutstandingRequest();
+        });
+
+
+        it('retrieves the products JSON', function() {
+            $httpBackend.whenGET('views/category.html').respond(200, 'category');
+            $httpBackend.whenGET('/assets/json/products.json').respond(200, sampleProduct);
+
+            products.getList();
+            $httpBackend.flush();
+        });
+
+    });
 });
