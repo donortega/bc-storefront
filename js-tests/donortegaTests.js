@@ -6,6 +6,7 @@ describe('Don Ortega --- BigCommerce TEST', function() {
     beforeEach(module('bcDonOrtega'));
 
     var $controller;
+    var controller;
 
     var sampleProduct = {
         "title": "Blue Stripe Stoneware Plate",
@@ -21,7 +22,8 @@ describe('Don Ortega --- BigCommerce TEST', function() {
     }));
 
     describe('Store controller', function() {
-        var $scope, controller;
+        var $scope;
+        var controller;
 
         beforeEach(function() {
             $scope = {};
@@ -80,28 +82,26 @@ describe('Don Ortega --- BigCommerce TEST', function() {
     });
 
     describe('Products service', function() {
-        var $httpBackend, products;
+        var $scope;
+        var controller;
+        var products;
+        var $q;
+        var deferred;
 
-        beforeEach(function() {
-            inject(function(_$httpBackend_, _products_) {
-                $httpBackend = _$httpBackend_;
-                products = _products_;
-            });
-        });
+        beforeEach(inject(function($controller, _$q_, _products_) {
+            $scope = {};
+            controller = $controller('StoreCtrl as ctrl', { $scope: $scope });
+            products = _products_;
 
-        afterEach(function() {
-            $httpBackend.verifyNoOutstandingExpectation();
-            $httpBackend.verifyNoOutstandingRequest();
-        });
+            $q = _$q_;
+            deferred = _$q_.defer();
 
+            spyOn(products, 'getList').and.returnValue(deferred.promise);
+        }));
 
         it('retrieves the products JSON', function() {
-            $httpBackend.whenGET('views/category.html').respond(200, 'category');
-            $httpBackend.whenGET('/assets/json/products.json').respond(200, sampleProduct);
-
-            products.getList();
-            $httpBackend.flush();
+            $scope.ctrl.init();
+            expect(products.getList).toHaveBeenCalled();
         });
-
     });
 });
