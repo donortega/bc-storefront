@@ -1,6 +1,6 @@
 'use strict';
 
-console.info('Don Ortega');
+console.info('Don Ortega --- Don Ortega');
 
 var app = angular.module('bcDonOrtega', ['ngAnimate', 'ngTouch', 'ui.bootstrap', 'ui.router']);
 
