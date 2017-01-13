@@ -1,6 +1,6 @@
 'use strict';
 
-console.info('Don Ortega --- BigCommerce');
+console.info('Don Ortega');
 
 var app = angular.module('bcDonOrtega', ['ngAnimate', 'ngTouch', 'ui.bootstrap', 'ui.router']);
 

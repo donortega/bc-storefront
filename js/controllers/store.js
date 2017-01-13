@@ -13,18 +13,18 @@ app.controller('StoreCtrl', ['$rootScope', '$scope', '$timeout', '$window', 'pro
             self.productList = data;
         });
 
-        if (!localStorage.getItem('bigcommerce-cart') || testing) {
+        if (!localStorage.getItem('bc-cart') || testing) {
             // cart is empty
             self.cart = [];
-        } else if ((JSON.parse(localStorage.getItem('bigcommerce-cart')).timestamp + (60000 * CART_EXPIRE)) < (new Date().getTime())) {
+        } else if ((JSON.parse(localStorage.getItem('bc-cart')).timestamp + (60000 * CART_EXPIRE)) < (new Date().getTime())) {
             // cart is too old
             self.cart = [];
 
             console.log('Cart timestamp is too old. Automatically purging Cart data.');
-            localStorage.removeItem('bigcommerce-cart');
+            localStorage.removeItem('bc-cart');
         } else {
             // cart exists
-            self.cart = JSON.parse(localStorage.getItem('bigcommerce-cart')).cart;
+            self.cart = JSON.parse(localStorage.getItem('bc-cart')).cart;
         }
     };
 
@@ -80,13 +80,13 @@ app.controller('StoreCtrl', ['$rootScope', '$scope', '$timeout', '$window', 'pro
         }
 
         if (self.cart.length) {
-            localStorage.setItem('bigcommerce-cart', JSON.stringify({
+            localStorage.setItem('bc-cart', JSON.stringify({
                 cart: self.cart,
                 timestamp: new Date().getTime()
             }));
         } else {
             // if resulting Cart is empty, just remove it from storage
-            localStorage.removeItem('bigcommerce-cart');
+            localStorage.removeItem('bc-cart');
         }
     };
 

@@ -7,13 +7,13 @@ app.service('products', ['$http', '$q', function($http, $q) {
         var deferred = $q.defer();
 
         // check if products JSON has already been cached in sessionStorage
-        if (!sessionStorage.getItem('bigcommerce-productList')) {
+        if (!sessionStorage.getItem('bc-productList')) {
             // products JSON not in sessionStorage, go fetch data then place in sessionStorage
             $http.get('/assets/json/products.json').then(
                 function(response) {
                     // success
-                    sessionStorage.setItem('bigcommerce-productList', JSON.stringify(response.data));
-                    deferred.resolve(JSON.parse(sessionStorage.getItem('bigcommerce-productList')));
+                    sessionStorage.setItem('bc-productList', JSON.stringify(response.data));
+                    deferred.resolve(JSON.parse(sessionStorage.getItem('bc-productList')));
                 },
                 function(response) {
                     // failure
@@ -23,7 +23,7 @@ app.service('products', ['$http', '$q', function($http, $q) {
             );
         } else {
             // retrieve cached products JSON from sessionStorage
-            deferred.resolve(JSON.parse(sessionStorage.getItem('bigcommerce-productList')));
+            deferred.resolve(JSON.parse(sessionStorage.getItem('bc-productList')));
         }
 
         return deferred.promise;
